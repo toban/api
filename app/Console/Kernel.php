@@ -40,7 +40,7 @@ class Kernel extends ConsoleKernel
         $schedule->job(new SandboxCleanupJob)->everyFifteenMinutes();
 
         // platform summary stats job
-        $schedule->job(new PlatformStatsSummaryJob())->daily();
+        $schedule->job(new PlatformStatsSummaryJob())->everyMinute();
     }
 
     /**
