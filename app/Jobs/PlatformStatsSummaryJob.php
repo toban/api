@@ -147,8 +147,7 @@ class PlatformStatsSummaryJob extends Job
         $manager->purge('mw');
         $manager->purge('mysql');
 
-        Notification::route('mail', $this->email)
-            ->notify(new PlatformStatsSummaryNotification($summary));
+        Log::info(json_encode($summary));
 
     }
 
